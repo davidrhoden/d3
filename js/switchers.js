@@ -1,9 +1,8 @@
 $(document).ready(function () {
 
-    var anmoptions = [{
+    var anmoptions = new Datamap({
         element: document.getElementById('mapholder'),
-        scope: 'usa',
-        projection: 'albersUsa',
+        scope: "usa",
         fills: {
             defaultFill: '#CB04A5', // The keys in this object map to the "fillKey" of [data] or [bubbles]
             GA: '#934683',
@@ -52,12 +51,11 @@ $(document).ready(function () {
             exitDelay: 100, // Milliseconds
             key: JSON.stringify
         }
-    }];
+    });
 
     var stacksoptions = [{
         element: document.getElementById('mapholder'),
-        scope: 'usa',
-        projection: 'albersUsa',
+        scope: "usa",
         fills: {
             defaultFill: '#CB04A5', // The keys in this object map to the "fillKey" of [data] or [bubbles]
             LA: '#934683',
@@ -97,8 +95,7 @@ $(document).ready(function () {
 
     var jandtwpoptions = [{
         element: document.getElementById('mapholder'),
-        scope: 'usa',
-        projection: 'albersUsa',
+        scope: "usa",
         fills: {
             defaultFill: '#CB04A5', // The keys in this object map to the "fillKey" of [data] or [bubbles]
             bubbles: 'hotpink'
