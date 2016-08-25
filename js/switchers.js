@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var anmoptions = new Datamap({
+    var anmoptions = {
         element: document.getElementById('mapholder'),
         scope: "usa",
         fills: {
@@ -51,9 +51,9 @@ $(document).ready(function () {
             exitDelay: 100, // Milliseconds
             key: JSON.stringify
         }
-    });
+    };
 
-    var stacksoptions = [{
+    var stacksoptions = {
         element: document.getElementById('mapholder'),
         scope: "usa",
         fills: {
@@ -91,9 +91,9 @@ $(document).ready(function () {
             exitDelay: 100, // Milliseconds
             key: JSON.stringify
         }
-    }];
+    };
 
-    var jandtwpoptions = [{
+    var jandtwpoptions = {
         element: document.getElementById('mapholder'),
         scope: "usa",
         fills: {
@@ -129,7 +129,7 @@ $(document).ready(function () {
             exitDelay: 100, // Milliseconds
             key: JSON.stringify
         }
-    }];
+    };
 
     function changeToJandtwp() {
         $("#mapholder").datamaps(jandtwpoptions);
