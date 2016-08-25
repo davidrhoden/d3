@@ -1,5 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
+        margin: 0;
+    padding: 0;
 }
 .chart div {
     font: 10px sans-serif;
@@ -15,12 +17,15 @@ body {
     position: relative; 
     width: 100vw; 
     height: 90vh;
+    outline: 3px dashed yellowgreen;
 }
 .selector {
 }
 
 .selector ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 .selector ul li {
     margin: 0;
@@ -37,3 +42,16 @@ body {
     width: 80%; 
     height: 90vh;
     }
+
+    @media screen and (min-width: 300px) and (max-width: 767px) {
+
+    .container, #mapholder {
+        flex-flow: column;
+        width: 100%;
+    }
+
+    .selector li {
+        font-size: .7em;
+        display: inline-block;
+    }
+}

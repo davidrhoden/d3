@@ -35,9 +35,9 @@ var jandtwpshows = [{
     radius: 5
 }, {
 	date: "06/22/2006",
-	venue: "Club Midway"
+	venue: "Club Midway",
 	city: "New York City",
-		longitude: -74.00,
+	longitude: -74.00,
     latitude: 40.71,
     radius: 5
 }, {

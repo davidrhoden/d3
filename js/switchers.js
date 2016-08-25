@@ -54,10 +54,22 @@ $(document).ready(function () {
     };
 
     var stacksoptions = {
-        element: document.getElementById('mapholder'),
+        element: document.getElementById('mapholder svg'),
         scope: "usa",
+  // Zoom in on Africa
+      setProjection: function(element) {
+        var projection = d3.geo.equirectangular()
+          .center([-74.00, 40.71])
+          .rotate([0, 0])
+          .scale(1500)
+          .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        var path = d3.geo.path()
+          .projection(projection);
+        
+        return {path: path, projection: projection};
+      },
         fills: {
-            defaultFill: '#CB04A5', // The keys in this object map to the "fillKey" of [data] or [bubbles]
+            defaultFill: 'lightgreen', // The keys in this object map to the "fillKey" of [data] or [bubbles]
             LA: '#934683',
             bubbles: 'orange'
         },
@@ -97,7 +109,7 @@ $(document).ready(function () {
         element: document.getElementById('mapholder'),
         scope: "usa",
         fills: {
-            defaultFill: '#CB04A5', // The keys in this object map to the "fillKey" of [data] or [bubbles]
+            defaultFill: 'yellow', // The keys in this object map to the "fillKey" of [data] or [bubbles]
             bubbles: 'hotpink'
         },
         geographyConfig: {
@@ -132,8 +144,10 @@ $(document).ready(function () {
     };
 
     function changeToJandtwp() {
-        $("#mapholder").datamaps(jandtwpoptions);
 
+        console.log($("#mapholder").datamaps);
+        usgigmap.bubbles(jandtwpshows);
+        $("#mapholder").datamaps(jandtwpoptions);
         $(".active").removeClass();
         $("li#jandtwp").addClass("active");
     }
@@ -141,13 +155,14 @@ $(document).ready(function () {
 
     function changeToStacks() {
         $("#mapholder").datamaps(stacksoptions);
-        console.log(stacksoptions);
+        usgigmap.bubbles(stacksshows);
         $(".active").removeClass();
         $("li#stacks").addClass("active");
     }
 
     function changeToAnm() {
-        $("#mapholder").datamaps(anmoptions);
+        $(".container #mapholder svg").datamaps(anmoptions);
+        usgigmap.bubbles(anmshows);
         $(".active").removeClass();
         $("li#anm").addClass("active");
     }
