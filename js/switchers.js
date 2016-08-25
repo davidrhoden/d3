@@ -133,6 +133,7 @@ $(document).ready(function () {
 
     function changeToJandtwp() {
         $("#mapholder").datamaps(jandtwpoptions);
+
         $(".active").removeClass();
         $("li#jandtwp").addClass("active");
     }
@@ -140,6 +141,7 @@ $(document).ready(function () {
 
     function changeToStacks() {
         $("#mapholder").datamaps(stacksoptions);
+        console.log(stacksoptions);
         $(".active").removeClass();
         $("li#stacks").addClass("active");
     }
@@ -150,8 +152,8 @@ $(document).ready(function () {
         $("li#anm").addClass("active");
     }
 
-    $("li#anm").on('click', changeToAnm());
-    $("li#jandtwp").on('click', changeToJandtwp());
-    $("li#stacks").on('click', changeToStacks());
+    $("li#anm").on('click', changeToAnm);
+    $("li#jandtwp").on('click', changeToJandtwp);
+    $("li#stacks").on('click', changeToStacks);
 
 });
