@@ -1,4 +1,5 @@
 body {
+    font-family: 'Roboto', sans-serif;
 }
 .chart div {
     font: 10px sans-serif;
@@ -8,6 +9,31 @@ body {
     margin: 1px;
     color: white;
 }
-.datamaps-bubble {
-    fill: rgb(54, 132, 249);
+.container {
+    display: flex;
+    align-items: center;
+    position: relative; 
+    width: 100vw; 
+    height: 90vh;
 }
+.selector {
+}
+
+.selector ul {
+    list-style-type: none;
+}
+.selector ul li {
+    margin: 0;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.selector ul li.active {
+    background: #F433AB;
+    color: white;
+}
+#mapholder {
+    position: relative; 
+    width: 80%; 
+    height: 90vh;
+    }

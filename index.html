@@ -6,15 +6,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>d3 fun</title>
         <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="chart"></div>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
         <script src="js/datamaps.usa.min.js"></script>
         <script src="js/anmshows.js"></script>
-        <div id="container" style="position: relative; width: 100%; height: 90vh;"></div>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="selector">
+                <ul>
+                <li id="anm" class="active">All-Night Movers</li>
+                <li id="jandtwp">Jimmy and The Wolfpack</li>
+                <li id="stacks">The Stacks</li>
+                </ul>
+            </div>
+            <div id="mapholder"></div>
+        </div>        
         <script src="js/loadmap.js"></script>
+        <script src="js/switchers.js" defer></script>
     </body>
 </html>
