@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var anmoptions = {
+    var anmoptions = new Datamap({
         element: document.getElementById('mapholder'),
         scope: "usa",
         fills: {
@@ -51,9 +51,9 @@ $(document).ready(function () {
             exitDelay: 100, // Milliseconds
             key: JSON.stringify
         }
-    };
+    });
 
-    var stacksoptions = {
+    var stacksoptions = new Datamap({
         element: document.getElementById('mapholder svg'),
         scope: "usa",
   // Zoom in on Africa
@@ -103,9 +103,9 @@ $(document).ready(function () {
             exitDelay: 100, // Milliseconds
             key: JSON.stringify
         }
-    };
+    });
 
-    var jandtwpoptions = {
+    var jandtwpoptions = new Datamap({
         element: document.getElementById('mapholder'),
         scope: "usa",
         fills: {
@@ -141,10 +141,9 @@ $(document).ready(function () {
             exitDelay: 100, // Milliseconds
             key: JSON.stringify
         }
-    };
+    });
 
     function changeToJandtwp() {
-
         console.log($("#mapholder").datamaps);
         usgigmap.bubbles(jandtwpshows);
         $("#mapholder").datamaps(jandtwpoptions);
@@ -152,9 +151,8 @@ $(document).ready(function () {
         $("li#jandtwp").addClass("active");
     }
 
-
     function changeToStacks() {
-        $("#mapholder").datamaps(stacksoptions);
+        $("#mapholder svg").datamaps(stacksoptions);
         usgigmap.bubbles(stacksshows);
         $(".active").removeClass();
         $("li#stacks").addClass("active");

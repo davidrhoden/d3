@@ -4,7 +4,7 @@ var usgigmap = new Datamap({
     projection: 'albersUsa',
     geographyConfig: {
         hideAntarctica: true,
-        hideHawaiiAndAlaska : true,
+        hideHawaiiAndAlaska: true,
         borderWidth: 1,
         borderOpacity: 1,
         borderColor: '#FDFDFD',
@@ -50,7 +50,7 @@ var usgigmap = new Datamap({
         highlightFillOpacity: 0.85,
         exitDelay: 100, // Milliseconds
         key: JSON.stringify
-    }
+        }
 });
 
 usgigmap.bubbles(anmshows, {
