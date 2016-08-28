@@ -145,22 +145,34 @@ $(document).ready(function () {
 
     function changeToJandtwp() {
         console.log($("#mapholder").datamaps);
-        usgigmap.bubbles(jandtwpshows);
+        usgigmap.bubbles(jandtwpshows, {
+    popupTemplate: function (geo, data) {
+        return ['<div class="hoverinfo">date: ' + data.date + '<br/>city: ' + data.city + '<br/>venue: ' + data.venue + '</div>'].join('');
+    }
+});
         $("#mapholder").datamaps(jandtwpoptions);
         $(".active").removeClass();
         $("li#jandtwp").addClass("active");
     }
 
     function changeToStacks() {
-        $("#mapholder svg").datamaps(stacksoptions);
-        usgigmap.bubbles(stacksshows);
+        $("#mapholder").datamaps(stacksoptions);
+        usgigmap.bubbles(atacksshows, {
+    popupTemplate: function (geo, data) {
+        return ['<div class="hoverinfo">date: ' + data.date + '<br/>city: ' + data.city + '<br/>venue: ' + data.venue + '</div>'].join('');
+    }
+});
         $(".active").removeClass();
         $("li#stacks").addClass("active");
     }
 
     function changeToAnm() {
-        $(".container #mapholder svg").datamaps(anmoptions);
-        usgigmap.bubbles(anmshows);
+        $("#mapholder").datamaps(anmoptions);
+        usgigmap.bubbles(anmshows, {
+    popupTemplate: function (geo, data) {
+        return ['<div class="hoverinfo">date: ' + data.date + '<br/>city: ' + data.city + '<br/>venue: ' + data.venue + '</div>'].join('');
+    }
+});
         $(".active").removeClass();
         $("li#anm").addClass("active");
     }
